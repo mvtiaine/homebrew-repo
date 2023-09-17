@@ -1,7 +1,7 @@
 class AudaciousUade < Formula
   desc "UADE plugin for Audacious media player"
   homepage "https://github.com/mvtiaine/audacious-uade"
-  url "https://github.com/mvtiaine/audacious-uade", using :git, tag: "0.8.1", revision: "7b8308edcee707613709facb940b39642596a147"
+  url "https://github.com/mvtiaine/audacious-uade", using: :git, tag: "0.8.1", revision: "7b8308edcee707613709facb940b39642596a147"
   license "GPL-2.0-or-later"
 
   depends_on "autoconf" => :build
