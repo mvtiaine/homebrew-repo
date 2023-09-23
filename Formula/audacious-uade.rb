@@ -3,10 +3,8 @@ class AudaciousUade < Formula
   homepage "https://github.com/mvtiaine/audacious-uade"
   license "GPL-2.0-or-later"
 
-  stable do
-    url "https://github.com/mvtiaine/audacious-uade/releases/download/0.8.2/audacious-uade-0.8.2.tar.bz2"
-    sha256 "914e77ac4eebc4bbd35074a97e40831a20927ec9f714eee3ad204437d39a6daf"
-  end
+  url "https://github.com/mvtiaine/audacious-uade/releases/download/0.8.2/audacious-uade-0.8.2.tar.bz2"
+  sha256 "914e77ac4eebc4bbd35074a97e40831a20927ec9f714eee3ad204437d39a6daf"
 
   depends_on "automake" => :build
   depends_on "libtool" => :build
