@@ -5,7 +5,6 @@ class AudaciousUade < Formula
   sha256 "914e77ac4eebc4bbd35074a97e40831a20927ec9f714eee3ad204437d39a6daf"
   license "GPL-2.0-or-later"
 
-  depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   depends_on "audacious"
