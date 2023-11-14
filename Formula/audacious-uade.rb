@@ -19,6 +19,6 @@ class AudaciousUade < Formula
   end
 
   test do
-    system bin/"audacious", "--help"
+    system "make", "check"
   end
 end
