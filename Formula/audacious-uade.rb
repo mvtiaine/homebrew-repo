@@ -1,8 +1,8 @@
 class AudaciousUade < Formula
   desc "UADE plugin for Audacious media player"
   homepage "https://github.com/mvtiaine/audacious-uade"
-  url "https://github.com/mvtiaine/audacious-uade/releases/download/0.10.0/audacious-uade-0.10.0.tar.bz2"
-  sha256 "cd0bffe9fbc8b428e610d79c222cbe45fc5fe865befdc8e213707f7a1284b0b6"
+  url "https://github.com/mvtiaine/audacious-uade/releases/download/0.10.1/audacious-uade-0.10.1.tar.bz2"
+  sha256 "bb29f899070ba7988bc113b49197f59ba5ec8bbb334d8bd1ebf27a7302d35aae"
   license "GPL-2.0-or-later"
 
   depends_on "pkg-config" => :build
