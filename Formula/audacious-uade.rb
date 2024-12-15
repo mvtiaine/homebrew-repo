@@ -14,6 +14,18 @@ class AudaciousUade < Formula
     system "make", "install"
   end
 
+  def caveats
+    <<~EOS
+      IMPORTANT!
+      In order for Homebrew Audacious to find the plugin, you must manually symlink it to the plugin dir:
+
+      on macOS:
+          ln -s "${HOMEBREW_PREFIX}/lib/audacious/Input/uade.dylib" "$(pkgconf --variable=plugin_dir audacious)/Input/uade.dylib"
+      on Linux:
+          ln -s "${HOMEBREW_PREFIX}/lib/audacious/Input/uade.so" "$(pkgconf --variable=plugin_dir audacious)/Input/uade.so"
+    EOS
+  end
+
   test do
     system "make", "check"
   end
