@@ -9,7 +9,7 @@ class AudaciousUade < Formula
   depends_on "audacious"
 
   def install
-    system "./configure", *std_configure_args
+    system "./configure", "--with-audacious-plugindir=\"#{lib}/audacious\"", *std_configure_args
     system "make"
     system "make", "install"
   end
