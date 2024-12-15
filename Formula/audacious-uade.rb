@@ -5,7 +5,7 @@ class AudaciousUade < Formula
   sha256 "9d49a041551696511b61db0b1c31e0fc379633be5696de26b63876d94e31a932"
   license "GPL-2.0-or-later"
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "audacious"
 
   def install
