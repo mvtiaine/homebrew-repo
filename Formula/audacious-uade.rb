@@ -11,13 +11,14 @@ class AudaciousUade < Formula
   depends_on "audacious"
 
   def install
-    if OS.mac?
+    # TODO does not work since no permission to install deadbeef plugin to /Applications/DeaDBeeF.app/...
+#    if OS.mac?
       # install cask deadbeef@nightly for DeaDBeeF support
-      ENV.append "CPPFLAGS", "-isystem/Applications/DeaDBeeF.app/Contents/Headers"
-      system "./configure", "--enable-players=all", "--enable-plugin-audacious=yes", "--with-static-stdlibs=no", "--with-audacious-plugindir=\"#{lib}/audacious\"", "--with-deadbeef-plugindir=/Applications/DeaDBeeF.app/Contents/PlugIns", *std_configure_args
-    else
+#      ENV.append "CPPFLAGS", "-isystem/Applications/DeaDBeeF.app/Contents/Headers"
+#      system "./configure", "--enable-players=all", "--enable-plugin-audacious=yes", "--with-static-stdlibs=no", "--with-audacious-plugindir=\"#{lib}/audacious\"", "--with-deadbeef-plugindir=/Applications/DeaDBeeF.app/Contents/PlugIns", *std_configure_args
+#    else
       system "./configure", "--enable-players=all", "--enable-plugin-audacious=yes", "--with-static-stdlibs=no", "--with-audacious-plugindir=\"#{lib}/audacious\"", *std_configure_args  
-    end
+#    end
     system "make"
     system "make", "install"
   end
