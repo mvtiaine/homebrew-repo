@@ -1,15 +1,23 @@
 class AudaciousUade < Formula
-  desc "UADE plugin for Audacious media player"
+  desc "UADE plugin for Audacious and DeaDBeeF"
   homepage "https://github.com/mvtiaine/audacious-uade"
-  url "https://github.com/mvtiaine/audacious-uade/releases/download/0.12.4/audacious-uade-0.12.4.tar.bz2"
-  sha256 "3d1b5f5dc42e04f9cc8c355b4783644507dcc36e13ac7e2662cad3b84432ff91"
+  url "https://github.com/mvtiaine/audacious-uade/releases/download/0.13.0/audacious-uade-0.13.0.tar.bz2"
+  sha256 "d656a44ded34ba63c937196b9207e22b3d4d727fbd7839fe1885c2061a32db0d"
   license "GPL-2.0-or-later"
 
   depends_on "pkgconf" => :build
+  depends_on "libopenmpt"
+  depends_on "libxmp"
   depends_on "audacious"
 
   def install
-    system "./configure", "--enable-plugin-audacious=yes", "--with-static-stdlibs=no", "--with-audacious-plugindir=\"#{lib}/audacious\"", *std_configure_args
+    if OS.mac?
+      # install cask deadbeef@nightly for DeaDBeeF support
+      ENV.append "CPPFLAGS", "-isystem/Applications/DeaDBeeF.app/Contents/Headers"
+      system "./configure", "--enable-players=all", "--enable-plugin-audacious=yes", "--with-static-stdlibs=no", "--with-audacious-plugindir=\"#{lib}/audacious\"", "--with-deadbeef-plugindir=/Applications/DeaDBeeF.app/Contents/PlugIns" *std_configure_args
+    else
+      system "./configure", "--enable-players=all", "--enable-plugin-audacious=yes", "--with-static-stdlibs=no", "--with-audacious-plugindir=\"#{lib}/audacious\"" *std_configure_args  
+    end
     system "make"
     system "make", "install"
   end
