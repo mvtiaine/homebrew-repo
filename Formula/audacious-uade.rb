@@ -1,8 +1,8 @@
 class AudaciousUade < Formula
   desc "UADE plugin for Audacious and DeaDBeeF"
   homepage "https://github.com/mvtiaine/audacious-uade"
-  url "https://github.com/mvtiaine/audacious-uade/releases/download/0.13.1/audacious-uade-0.13.1.tar.bz2"
-  sha256 "8f308dc9e5bdcc8bb6cc49dee9ce4acf93d20c02026fff9043975be3937fd393"
+  url "https://github.com/mvtiaine/audacious-uade/releases/download/0.13.2/audacious-uade-0.13.2.tar.bz2"
+  sha256 "f98be9164be6954de67988306401a1dc3b6157a4c08f2f14f5f2e855bbd9451d"
   license "GPL-2.0-or-later"
 
   depends_on "pkgconf" => :build
